@@ -280,7 +280,7 @@ export default function Home() {
           <div className="copy-body">
             <p className="address-large" data-reveal>Estrada de Novo Airão, km 07<br />Ramal do Japonês, Manacapuru – AM</p>
             <div className="location-actions" data-reveal>
-              <a className="outline-button" href="https://www.google.com/maps/search/?api=1&query=Portal+do+Japão+Manacapuru+AM" target="_blank" rel="noreferrer">Ver no mapa ↗</a>
+              <a className="outline-button" href="https://www.google.com/maps/search/?api=1&query=Portal+do+Japão+Manacapuru+AM" target="_blank" rel="noreferrer">Ver no mapa</a>
             </div>
           </div>
         </div>
@@ -298,8 +298,8 @@ export default function Home() {
           <p>WhatsApp: (92) 99366-1404</p>
         </div>
         <div className="footer-links">
-          <a href="https://instagram.com/portaldojapao2026" target="_blank" rel="noreferrer">Instagram ↗</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Portal+do+Japão+Manacapuru+AM" target="_blank" rel="noreferrer">Mapa ↗</a>
+          <a href="https://instagram.com/portaldojapao2026" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Portal+do+Japão+Manacapuru+AM" target="_blank" rel="noreferrer">Mapa</a>
         </div>
       </footer>
     </main>
