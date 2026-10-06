@@ -21,6 +21,14 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; }
 img { object-fit: cover; }
 
+[class*="netlify"][class*="badge"],
+[id*="netlify"][id*="badge"],
+a[href*="netlify.com"][class*="badge"],
+iframe[src*="netlify.com"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 .site-nav {
   position: fixed; z-index: 60; top: 22px; left: 50%; transform: translateX(-50%);
   width: min(1380px, calc(100% - 64px)); display: grid; grid-template-columns: 1fr auto;
