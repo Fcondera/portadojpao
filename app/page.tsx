@@ -42,6 +42,24 @@ export default function Home() {
   const root = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const removeNetlifyBadge = () => {
+      document
+        .querySelectorAll<HTMLElement>('a[href*="netlify"], iframe[src*="netlify"], [class*="netlify"], [id*="netlify"], [aria-label*="Netlify"], [title*="Netlify"]')
+        .forEach((el) => el.remove());
+
+      document.querySelectorAll<HTMLElement>("body *").forEach((el) => {
+        if (el.children.length > 4) return;
+        const text = el.textContent?.trim().toLowerCase();
+        if (text?.includes("powered by netlify")) {
+          el.closest("a, button, div, aside")?.remove();
+        }
+      });
+    };
+
+    removeNetlifyBadge();
+    const badgeObserver = new MutationObserver(removeNetlifyBadge);
+    badgeObserver.observe(document.body, { childList: true, subtree: true });
+
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({ duration: 1.08, smoothWheel: true });
@@ -154,6 +172,7 @@ export default function Home() {
     }, root);
 
     return () => {
+      badgeObserver.disconnect();
       cancelAnimationFrame(rafId);
       lenis.destroy();
       ctx.revert();

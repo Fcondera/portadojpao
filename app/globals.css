@@ -23,10 +23,15 @@ img { object-fit: cover; }
 
 [class*="netlify"][class*="badge"],
 [id*="netlify"][id*="badge"],
+a[href*="netlify"],
 a[href*="netlify.com"][class*="badge"],
-iframe[src*="netlify.com"] {
+iframe[src*="netlify"],
+[aria-label*="Netlify"],
+[title*="Netlify"] {
   display: none !important;
   visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 .site-nav {
