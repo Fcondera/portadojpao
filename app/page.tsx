@@ -167,9 +167,6 @@ export default function Home() {
           <Torii className="logo-torii" />
           <span>Portal do Japão</span>
         </a>
-        <a className="nav-button" href={WHATSAPP} target="_blank" rel="noreferrer">
-          <WhatsAppIcon /> Agende sua visita
-        </a>
       </header>
 
       <section id="inicio" className="hero">
@@ -182,6 +179,9 @@ export default function Home() {
             <span className="hero-word">Portal</span>
             <span className="hero-word">do <em>Japão</em></span>
           </h1>
+          <a className="hero-reserve-button" href={WHATSAPP} target="_blank" rel="noreferrer">
+            <WhatsAppIcon /> Fazer reserva
+          </a>
         </div>
         <p className="hero-small hero-tagline">Natureza, sabores e momentos<br />únicos no coração da Amazônia.</p>
         <div className="hero-address hero-small">
@@ -277,9 +277,11 @@ export default function Home() {
         </div>
         <div className="footer-links">
           <a href="https://instagram.com/portaldojapao2026" target="_blank" rel="noreferrer">Instagram ↗</a>
-          <a href={WHATSAPP} target="_blank" rel="noreferrer">WhatsApp ↗</a>
           <a href="https://www.google.com/maps/search/?api=1&query=Portal+do+Japão+Manacapuru+AM" target="_blank" rel="noreferrer">Mapa ↗</a>
         </div>
+        <a className="footer-whatsapp" href={WHATSAPP} target="_blank" rel="noreferrer">
+          <WhatsAppIcon /> Reservar pelo WhatsApp
+        </a>
       </footer>
     </main>
   );
