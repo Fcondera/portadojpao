@@ -10,10 +10,14 @@ const WHATSAPP =
   "https://wa.me/5592993661404?text=Olá!%20Quero%20agendar%20uma%20visita%20ao%20Portal%20do%20Japão.";
 
 const gallery = [
-  { src: "/images/hero-sunset.jpeg", alt: "Pôr do sol no Portal do Japão" },
-  { src: "/images/cafe-torii-large.jpeg", alt: "Café com o Torii e o rio ao fundo" },
-  { src: "/images/rio-dourado-large.jpeg", alt: "Reflexo dourado do sol no rio" },
-  { src: "/images/cafe-rio-large.jpeg", alt: "Mesa de café com vista para o rio" },
+  { src: "/images/img-portal.jpeg", alt: "Portal vermelho com vista para o rio" },
+  { src: "/images/img-mesa.jpeg", alt: "Mesa posta no Portal do Japão" },
+  { src: "/images/img-xicara.jpeg", alt: "Xícara de café regional" },
+  { src: "/images/img-bolo.jpeg", alt: "Bolo servido no café regional" },
+  { src: "/images/img-cadeira.jpeg", alt: "Cadeiras com vista para a natureza" },
+  { src: "/images/img-gira.jpeg", alt: "Girassóis no Portal do Japão" },
+  { src: "/images/img-girasol.jpeg", alt: "Detalhe de girassol ao ar livre" },
+  { src: "/images/img-noiteportal.jpeg", alt: "Portal do Japão iluminado à noite" },
 ];
 
 function Torii({ className = "" }: { className?: string }) {
@@ -213,7 +217,7 @@ export default function Home() {
       </section>
 
       <section className="sunset-statement" aria-label="Sunset at the Portal of Japan">
-        <Image src="/images/cafe-torii.jpeg" alt="" fill sizes="100vw" />
+        <Image src="/images/img-xicara.jpeg" alt="" fill sizes="100vw" />
         <div className="sunset-wash" />
         <h2 className="sunset-title" data-kinetic>
           <span>Sunset</span>
@@ -245,17 +249,13 @@ export default function Home() {
         </div>
         <div className="experience-cards">
           {[
-            ["/images/cafe-torii-large.jpeg", "Café Regional", "Sabores únicos"],
-            ["/images/rio-dourado-large.jpeg", "Pôr do Sol", "Um espetáculo à parte"],
-            ["/images/IMG-piscina-fallback.jpeg", "Relaxamento", "Natureza e tranquilidade"],
-            ["/images/cafe-rio-large.jpeg", "Encontros", "Para toda a família"],
+            ["/images/img-mesa.jpeg", "Café Regional", "Sabores únicos"],
+            ["/images/img-portal.jpeg", "Pôr do Sol", "Um espetáculo à parte"],
+            ["/images/img-cadeira.jpeg", "Relaxamento", "Natureza e tranquilidade"],
+            ["/images/img-bolo.jpeg", "Encontros", "Para toda a família"],
           ].map(([src, title, text], i) => (
             <article className="experience-card" key={title} data-reveal>
-              {i === 2 ? (
-                <Image src="/images/hero-sunset.jpeg" alt={title} fill sizes="(max-width: 900px) 50vw, 25vw" />
-              ) : (
-                <Image src={src} alt={title} fill sizes="(max-width: 900px) 50vw, 25vw" />
-              )}
+              <Image src={src} alt={title} fill sizes="(max-width: 900px) 50vw, 25vw" />
               <div className="card-shade" />
               <div className="card-copy"><strong>{title}</strong><span>{text}</span></div>
             </article>
@@ -263,14 +263,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="galeria" className="cinema-gallery" data-parallax>
-        <Image src={gallery[0].src} alt={gallery[0].alt} fill sizes="100vw" />
-        <div className="gallery-shade" />
+      <section id="galeria" className="gallery-section">
         <div className="gallery-copy">
           <h2 className="kinetic-title" data-kinetic>Vistas que<br />ficam na memória</h2>
           <div className="copy-body">
             <p data-reveal>A natureza aqui proporciona momentos únicos, com paisagens que encantam em qualquer hora do dia.</p>
           </div>
+        </div>
+        <div className="gallery-grid" aria-label="Galeria de fotos">
+          {gallery.map((item, index) => (
+            <figure className={`gallery-item gallery-item-${index + 1}`} key={item.src} data-reveal>
+              <Image src={item.src} alt={item.alt} fill sizes="(max-width: 760px) 92vw, (max-width: 1100px) 45vw, 28vw" />
+            </figure>
+          ))}
         </div>
       </section>
 
@@ -285,7 +290,7 @@ export default function Home() {
           </div>
         </div>
         <div className="map-visual">
-          <Image src="/images/cafe-rio-large.jpeg" alt="Vista do rio na região do Portal do Japão" fill sizes="(max-width: 900px) 100vw, 58vw" />
+          <Image src="/images/img-noiteportal.jpeg" alt="Portal do Japão iluminado à noite" fill sizes="(max-width: 900px) 100vw, 58vw" />
           <div className="map-overlay" />
         </div>
       </section>
