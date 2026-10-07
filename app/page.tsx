@@ -49,10 +49,13 @@ function WhatsAppIcon() {
 
 export default function Home() {
   const root = useRef<HTMLElement>(null);
+  const reservationPopupShown = useRef(false);
   const [showReservationPopup, setShowReservationPopup] = useState(false);
 
   useEffect(() => {
     const popupTimer = window.setTimeout(() => {
+      if (reservationPopupShown.current) return;
+      reservationPopupShown.current = true;
       setShowReservationPopup(true);
     }, 5000);
 
