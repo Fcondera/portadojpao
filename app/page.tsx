@@ -232,6 +232,17 @@ export default function Home() {
         </h2>
       </section>
 
+      <section className="video-section" aria-label="Vídeo do Portal do Japão">
+        <div className="video-copy">
+          <h2 data-kinetic>Venha viver<br />o melhor da natureza</h2>
+        </div>
+        <div className="video-frame" data-reveal>
+          <video controls preload="metadata" poster="/images/img-portal.jpeg">
+            <source src="/images/video/video-portal-japones.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
       <section id="sobre" className="about split-section">
         <div className="split-media" data-parallax>
           <Image src="/images/img-mesa.jpeg" alt="Mesa de café regional no Portal do Japão" fill sizes="(max-width: 900px) 100vw, 50vw" />
