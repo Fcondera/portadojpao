@@ -243,14 +243,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="sunset-statement" aria-label="Sunset at the Portal of Japan">
+      <section className="sunset-statement" aria-label="Pôr do sol no Portal do Japão">
         <Image src="/images/img-xicara.jpeg" alt="" fill sizes="100vw" />
         <div className="sunset-wash" />
         <h2 className="sunset-title" data-kinetic>
-          <span>Sunset</span>
-          <span>at the</span>
-          <span>Portal</span>
-          <span>of Japan</span>
+          <span>Pôr do sol</span>
+          <span>no Portal</span>
+          <span>do Japão</span>
         </h2>
       </section>
 
