@@ -18,6 +18,11 @@ const gallery = [
   { src: "/images/img-gira.jpeg", alt: "Girassóis no Portal do Japão" },
   { src: "/images/img-girasol.jpeg", alt: "Detalhe de girassol ao ar livre" },
   { src: "/images/img-noiteportal.jpeg", alt: "Portal do Japão iluminado à noite" },
+  { src: "/images/bolo-milho.jpeg", alt: "Bolo de milho servido no café regional" },
+  { src: "/images/bolo.jpeg", alt: "Bolo artesanal servido no Portal do Japão" },
+  { src: "/images/por-do-sol.jpeg", alt: "Pôr do sol visto do Portal do Japão" },
+  { src: "/images/por-do-sol1.jpeg", alt: "Paisagem do pôr do sol na Amazônia" },
+  { src: "/images/xicara-rosa.jpeg", alt: "Xícara rosa com café regional" },
 ];
 
 function Torii({ className = "" }: { className?: string }) {
