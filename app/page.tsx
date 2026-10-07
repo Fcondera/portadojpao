@@ -316,6 +316,28 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="info-section">
+        <div className="info-copy">
+          <h2 className="kinetic-title" data-kinetic>Horários<br />e eventos</h2>
+          <p data-reveal>Planeje sua visita ao Portal do Japão com tranquilidade.</p>
+        </div>
+        <div className="info-cards">
+          <article className="info-card" data-reveal>
+            <span>Funcionamento</span>
+            <strong>7h00 às 11h00</strong>
+            <strong>15h00 às 18h00</strong>
+          </article>
+          <article className="info-card" data-reveal>
+            <span>Reservas</span>
+            <strong>Sexta, sábado e domingo</strong>
+          </article>
+          <article className="info-card" data-reveal>
+            <span>Eventos</span>
+            <strong>Alugamos nosso espaço para eventos</strong>
+          </article>
+        </div>
+      </section>
+
       <section id="localizacao" className="location split-section">
         <div className="location-copy paper-texture">
           <h2 className="kinetic-title" data-kinetic>Como chegar</h2>
