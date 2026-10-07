@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
@@ -49,8 +49,13 @@ function WhatsAppIcon() {
 
 export default function Home() {
   const root = useRef<HTMLElement>(null);
+  const [showReservationPopup, setShowReservationPopup] = useState(false);
 
   useEffect(() => {
+    const popupTimer = window.setTimeout(() => {
+      setShowReservationPopup(true);
+    }, 5000);
+
     const removeNetlifyBadge = () => {
       document
         .querySelectorAll<HTMLElement>('a[href*="netlify"], iframe[src*="netlify"], [class*="netlify"], [id*="netlify"], [aria-label*="Netlify"], [title*="Netlify"]')
@@ -181,6 +186,7 @@ export default function Home() {
     }, root);
 
     return () => {
+      window.clearTimeout(popupTimer);
       badgeObserver.disconnect();
       cancelAnimationFrame(rafId);
       lenis.destroy();
@@ -199,6 +205,18 @@ export default function Home() {
       <a className="floating-whatsapp" href={WHATSAPP} target="_blank" rel="noreferrer">
         <WhatsAppIcon /> Agende sua visita
       </a>
+      {showReservationPopup && (
+        <aside className="reservation-popup" role="dialog" aria-modal="false" aria-labelledby="reservation-popup-title">
+          <button className="reservation-popup-close" type="button" onClick={() => setShowReservationPopup(false)} aria-label="Fechar anúncio">
+            ×
+          </button>
+          <p className="reservation-popup-kicker">Reservas sex, sáb e dom</p>
+          <h2 id="reservation-popup-title">Você está precisando tomar um café no Portal do Japonês</h2>
+          <a className="reservation-popup-button" href={WHATSAPP} target="_blank" rel="noreferrer">
+            Fazer reserva
+          </a>
+        </aside>
+      )}
 
       <section id="inicio" className="hero">
         <div className="hero-photo">
