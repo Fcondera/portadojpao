@@ -294,7 +294,7 @@ export default function Home() {
             <article className="experience-card" key={title} data-reveal>
               <Image src={src} alt={title} fill sizes="(max-width: 900px) 50vw, 25vw" />
               <div className="card-shade" />
-              <div className="card-copy"><strong>{title}</strong><span>{text}</span></div>
+              <div className="card-copy"><span>{text}</span></div>
             </article>
           ))}
         </div>
