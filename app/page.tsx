@@ -193,7 +193,7 @@ export default function Home() {
 
       <section id="inicio" className="hero">
         <div className="hero-photo">
-          <Image src="/images/hero-sunset.jpeg" alt="Visitante observando o pôr do sol no Portal do Japão" fill priority sizes="100vw" />
+          <Image src="/images/img-portal.jpeg" alt="Vista do Portal do Japão" fill priority sizes="100vw" />
         </div>
         <div className="hero-vignette" />
         <div className="hero-content">
