@@ -225,7 +225,7 @@ export default function Home() {
 
       <section id="sobre" className="about split-section">
         <div className="split-media" data-parallax>
-          <Image src="/images/cafe-torii-large.jpeg" alt="Mesa de café regional com Torii ao fundo" fill sizes="(max-width: 900px) 100vw, 50vw" />
+          <Image src="/images/img-mesa.jpeg" alt="Mesa de café regional no Portal do Japão" fill sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
         <div className="split-copy paper-texture">
           <h2 className="kinetic-title" data-kinetic>Um lugar especial<br />em meio à natureza</h2>
