@@ -8,6 +8,7 @@ import Lenis from "@studio-freight/lenis";
 
 const WHATSAPP =
   "https://wa.me/5592993661404?text=Olá!%20Quero%20agendar%20uma%20visita%20ao%20Portal%20do%20Japão.";
+const MAP_QUERY = "Portal do Japão Manacapuru AM";
 
 const gallery = [
   { src: "/images/img-portal.jpeg", alt: "Portal vermelho com vista para o rio" },
@@ -321,14 +322,20 @@ export default function Home() {
           <h2 className="kinetic-title" data-kinetic>Como chegar</h2>
           <div className="copy-body">
             <p className="address-large" data-reveal>Estrada de Novo Airão, km 07<br />Ramal do Japonês, Manacapuru – AM</p>
+            <p className="reservation-days" data-reveal>Reservas: sexta, sábado e domingo</p>
             <div className="location-actions" data-reveal>
-              <a className="outline-button" href="https://www.google.com/maps/search/?api=1&query=Portal+do+Japão+Manacapuru+AM" target="_blank" rel="noreferrer">Ver no mapa</a>
+              <a className="outline-button" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`} target="_blank" rel="noreferrer">Ver no mapa</a>
+              <a className="outline-button" href={`https://waze.com/ul?q=${encodeURIComponent(MAP_QUERY)}&navigate=yes`} target="_blank" rel="noreferrer">Abrir no Waze</a>
             </div>
           </div>
         </div>
         <div className="map-visual">
-          <Image src="/images/img-noiteportal.jpeg" alt="Portal do Japão iluminado à noite" fill sizes="(max-width: 900px) 100vw, 58vw" />
-          <div className="map-overlay" />
+          <iframe
+            title="Mapa do Portal do Japão"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&output=embed`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </section>
 
@@ -341,7 +348,7 @@ export default function Home() {
         </div>
         <div className="footer-links">
           <a href="https://instagram.com/portaldojapao2026" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Portal+do+Japão+Manacapuru+AM" target="_blank" rel="noreferrer">Mapa</a>
+          <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`} target="_blank" rel="noreferrer">Mapa</a>
         </div>
       </footer>
     </main>
