@@ -9,6 +9,99 @@ import Lenis from "@studio-freight/lenis";
 const WHATSAPP =
   "https://wa.me/5592993661404?text=Olá!%20Quero%20agendar%20uma%20visita%20ao%20Portal%20do%20Japão.";
 const MAP_QUERY = "Portal do Japão Manacapuru AM";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-do-japao.netlify.app";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "Portal do Japão",
+      url: SITE_URL,
+      inLanguage: "pt-BR",
+      description:
+        "Café regional na Amazônia, experiências na natureza, pôr do sol e eventos em Manacapuru, Amazonas.",
+    },
+    {
+      "@type": ["CafeOrCoffeeShop", "TouristAttraction", "LocalBusiness"],
+      "@id": `${SITE_URL}/#portal-do-japao`,
+      name: "Portal do Japão",
+      alternateName: "Portal do Japonês",
+      url: SITE_URL,
+      image: [
+        `${SITE_URL}/images/img-portal.jpeg`,
+        `${SITE_URL}/images/img-mesa.jpeg`,
+        `${SITE_URL}/images/xicara-rosa.jpeg`,
+      ],
+      telephone: "+5592993661404",
+      priceRange: "$$",
+      servesCuisine: ["Café regional", "Culinária amazônica", "Café da manhã regional"],
+      description:
+        "Portal do Japão é um destino em Manacapuru para café regional na Amazônia, contato com a natureza, pôr do sol, fotos e eventos.",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Estrada de Novo Airão, km 07, Ramal do Japonês",
+        addressLocality: "Manacapuru",
+        addressRegion: "AM",
+        addressCountry: "BR",
+      },
+      areaServed: [
+        "Manacapuru",
+        "Manaus",
+        "Novo Airão",
+        "Amazonas",
+        "Amazônia",
+      ],
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Friday", "Saturday", "Sunday"],
+          opens: "07:00",
+          closes: "11:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Friday", "Saturday", "Sunday"],
+          opens: "15:00",
+          closes: "18:00",
+        },
+      ],
+      hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`,
+      sameAs: ["https://instagram.com/portaldojapao2026"],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Onde tomar café regional na Amazônia?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O Portal do Japão, em Manacapuru, Amazonas, oferece café regional em meio à natureza, com vista para o rio e experiência de pôr do sol.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quais são os horários do Portal do Japão?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O atendimento acontece das 7h00 às 11h00 e das 15h00 às 18h00, com reservas para sexta, sábado e domingo.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "O Portal do Japão aluga espaço para eventos?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sim. O Portal do Japão também aluga seu espaço para eventos em Manacapuru, Amazonas.",
+          },
+        },
+      ],
+    },
+  ],
+};
 
 const gallery = [
   { src: "/images/img-portal.jpeg", alt: "Portal vermelho com vista para o rio" },
@@ -209,6 +302,10 @@ export default function Home() {
       <a className="floating-whatsapp" href={WHATSAPP} target="_blank" rel="noreferrer">
         <WhatsAppIcon /> Agende sua visita
       </a>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {showReservationPopup && (
         <aside className="reservation-popup" role="dialog" aria-modal="false" aria-labelledby="reservation-popup-title">
           <button className="reservation-popup-close" type="button" onClick={() => setShowReservationPopup(false)} aria-label="Fechar anúncio">
