@@ -322,7 +322,7 @@ export default function Home() {
             ×
           </button>
           <p className="reservation-popup-kicker">Reservas sex, sáb e dom</p>
-          <h2 id="reservation-popup-title">Você está precisando tomar um café no Portal do Japonês</h2>
+          <h2 id="reservation-popup-title">Você está precisando tomar um café no Portal do Japão</h2>
           <a className="reservation-popup-button" href={WHATSAPP} target="_blank" rel="noreferrer">
             Fazer reserva
           </a>

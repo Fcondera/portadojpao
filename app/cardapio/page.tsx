@@ -134,22 +134,23 @@ export default function CardapioPage() {
       weekday: "long", day: "2-digit", month: "long", year: "numeric",
     });
     const lines = [
-      "Olá! Gostaria de solicitar uma reserva no Portal do Japão.",
+      "Olá! Quero solicitar uma reserva no Portal do Japão.",
       "",
+      "*DADOS DA VISITA*",
       `Nome: ${data.get("name")}`,
-      `Telefone para contato: ${data.get("phone")}`,
+      `Telefone: ${data.get("phone")}`,
       `Data: ${formattedDate}`,
-      `Horário: ${period}`,
+      `Período: ${period}`,
       `Pessoas: ${data.get("people")}`,
-      `Forma de pagamento preferida: ${data.get("payment")}`,
+      `Pagamento: ${data.get("payment")}`,
       "",
-      "Pedido:",
+      "*PEDIDO*",
       ...order.map((item) => `• ${item.quantity}x ${item.name} — ${currency.format(item.price * item.quantity)}`),
-      `Total estimado: ${currency.format(total)}`,
-      data.get("notes") ? `Observações: ${data.get("notes")}` : "",
       "",
-      "Sei que esta é uma solicitação e aguardo a confirmação da equipe. O pagamento será combinado pelo WhatsApp.",
-    ].filter(Boolean);
+      `*TOTAL ESTIMADO: ${currency.format(total)}*`,
+      "",
+      "Aguardo a confirmação da reserva. Obrigado!",
+    ];
 
     setFormError("");
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener,noreferrer");
