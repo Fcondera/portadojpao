@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Noto_Serif } from "next/font/google";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-do-japao.netlify.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portaldojapao.com.br";
 const siteTitle = "Portal do Japão | Café regional na Amazônia em Manacapuru";
 const siteDescription =
   "Café regional na Amazônia com natureza, pôr do sol, vista para o rio e experiências especiais no Portal do Japão, em Manacapuru, Amazonas.";

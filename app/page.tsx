@@ -9,7 +9,7 @@ import Lenis from "@studio-freight/lenis";
 const WHATSAPP =
   "https://wa.me/5592993661404?text=Olá!%20Quero%20agendar%20uma%20visita%20ao%20Portal%20do%20Japão.";
 const MAP_QUERY = "Portal do Japão Manacapuru AM";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-do-japao.netlify.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portaldojapao.com.br";
 
 const structuredData = {
   "@context": "https://schema.org",
