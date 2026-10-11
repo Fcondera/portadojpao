@@ -49,6 +49,27 @@ iframe[src*="netlify"],
 .nav-button { justify-self: end; }
 .nav-button svg, .primary-button svg { width: 16px; height: 16px; }
 .nav-button:hover, .primary-button:hover { background: var(--red-dark); transform: translateY(-2px); }
+.floating-menu {
+  position: fixed;
+  z-index: 70;
+  right: clamp(18px, 3.4vw, 48px);
+  bottom: clamp(78px, 7.4vw, 98px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid rgba(255, 255, 255, .36);
+  border-radius: 999px;
+  color: #fff;
+  background: #245b38;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform .25s, background .25s;
+}
+.floating-menu svg { width: 16px; height: 16px; flex: none; }
+.floating-menu:hover { background: #19452a; transform: translateY(-2px); }
 .floating-whatsapp {
   position: fixed;
   z-index: 70;
@@ -486,6 +507,7 @@ footer p { margin: 0; color: rgba(255,255,255,.62); font-size: 13px; line-height
     border-radius: 50%;
     font-size: 0;
   }
+  .floating-menu { bottom: 88px; min-height: 46px; padding: 0 19px; font-size: 12px; }
   .floating-whatsapp svg { width: 23px; height: 23px; }
   .reservation-popup {
     left: 16px;

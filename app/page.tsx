@@ -141,6 +141,15 @@ function WhatsAppIcon() {
   );
 }
 
+function MenuIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 3.75h8.5L18 7.2v13.05H6z" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <path d="M14.25 3.9V7.5H18M9 11h6M9 14.5h6M9 18h4" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export default function Home() {
   const root = useRef<HTMLElement>(null);
   const reservationPopupShown = useRef(false);
@@ -299,6 +308,7 @@ export default function Home() {
           <span>Portal do Japão</span>
         </a>
       </header>
+      <a className="floating-menu" href="/cardapio"><MenuIcon />Cardápio</a>
       <a className="floating-whatsapp" href={WHATSAPP} target="_blank" rel="noreferrer">
         <WhatsAppIcon /> Agende sua visita
       </a>
@@ -465,6 +475,7 @@ export default function Home() {
           <p>WhatsApp: (92) 99366-1404</p>
         </div>
         <div className="footer-links">
+          <a href="/cardapio">Cardápio e reservas</a>
           <a href="https://instagram.com/portaldojapao2026" target="_blank" rel="noreferrer">Instagram</a>
           <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`} target="_blank" rel="noreferrer">Mapa</a>
         </div>
